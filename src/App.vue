@@ -1,7 +1,7 @@
 <template>
-  <div v-bind:class="theme">
+  <div v-bind:class="theme" class="content">
     <Header />
-    <div class="container mx-auto">
+    <div class="container mx-auto py-8">
       <router-view />
     </div>
   </div>
@@ -24,3 +24,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+  .content {
+    @apply bg-gray-200;
+    &.dark-theme {
+      @apply bg-gray-800;
+    }
+  }
+</style>

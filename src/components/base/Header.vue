@@ -2,9 +2,9 @@
   <div class="header">
     <div class="h-20 container mx-auto flex justify-between items-center">
       <router-link to="/" class="header__logo">Logo</router-link>
-      <nav class="space-x-4">
-        <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
+      <nav class="space-x-4 header__nav">
+        <router-link to="/" class="header__nav__items">Home</router-link>
+        <router-link to="/about" class="header__nav__items">About</router-link>
         <select v-model="theme" @change="handleChange">
           <option value="dark-theme">Dark</option>
           <option value="light-theme">Light</option>
@@ -45,14 +45,16 @@ export default {
     .header__logo {
       @apply text-white;
     }
+    .header__nav {
+      .header__nav__items {
+        @apply text-white;
+      }
+    }
   }
 }
 .light-theme {
   .header {
     @apply bg-white;
-    .header__logo {
-      @apply text-black;
-    }
   }
 }
 </style>
